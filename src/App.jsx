@@ -1,7 +1,7 @@
+import { Form2 } from './componets/Form2';
+
 function App() {
-  return (
-    <></>
-  )
+	return Form2();
 }
 
-export default App
+export default App;
