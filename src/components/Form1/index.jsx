@@ -1,1 +1,1 @@
-export { default as Form1 } from './Form1.jsx'
+export { default as Form1 } from './Form1.jsx';

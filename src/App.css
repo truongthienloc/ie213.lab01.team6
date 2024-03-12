@@ -3,9 +3,8 @@ html {
 }
 
 * {
-  box-sizing: border-box;
-  font-size: inherit;
-  
+	box-sizing: border-box;
+	font-size: inherit;
 }
 
 body {

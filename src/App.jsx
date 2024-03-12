@@ -1,15 +1,9 @@
-import Form1 from './components/Form1/Form1'
-import Form2 from './components/Form2/Form2'
-import BookingForm from './components/BookingForm/BookingForm'
+import { RouterProvider } from 'react-router-dom';
+import './App.css';
+import { rootRoute } from './routes/rootRoute';
 
 function App() {
-  return (
-    <>
-      <Form1 />
-      <Form2 />
-      <BookingForm/>
-    </>
-  )
+	return <RouterProvider router={rootRoute} />;
 }
 
 export default App;
