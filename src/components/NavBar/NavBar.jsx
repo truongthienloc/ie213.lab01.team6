@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 export default function NavBar() {
-  return (
-    <nav className=''>
-        <ul>
-            <li></li>
-        </ul>
-    </nav>
-  )
+	return (
+		<nav className="">
+			<ul>
+				<li></li>
+			</ul>
+		</nav>
+	);
 }
