@@ -1,11 +1,10 @@
-import Form1 from "./componets/Form1/Form1";
-
+import BookingForm from './componets/BookingForm/BookingForm.jsx'
 function App() {
   return (
     <>
-      <Form1 />
+    <BookingForm/>
     </>
   )
 }
 
-export default App
+export default App;
