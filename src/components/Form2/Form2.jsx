@@ -147,7 +147,8 @@ export default function Form2() {
                     <p>Những công việc đã được phân công nhưng chưa hoàn thành: </p>
                     <p>{task}</p>
                     <p>Cam kết sẽ hoàn thành tại: {options.join(" - ")}</p>
-                </div>}
+                </div>
+            }
         </div>
     );
 }

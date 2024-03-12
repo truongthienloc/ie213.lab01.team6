@@ -1,6 +1,6 @@
 import "./BookingForm.css";
 import { useState } from "react";
-import React from "react";
+
 const partyTypes = [
   {
     id: 0,
@@ -15,6 +15,7 @@ const partyTypes = [
     name: "Tiệc tối",
   },
 ];
+
 const locationTypes = [
   {
     id: 0,
@@ -25,6 +26,7 @@ const locationTypes = [
     name: "Ngoài trời",
   },
 ];
+
 const ages = [
   {
     id: 0,
@@ -39,6 +41,7 @@ const ages = [
     name: "Trên 35 tuổi",
   },
 ];
+
 const genders = [
   {
     id: 0,
@@ -64,6 +67,8 @@ export default function BookingForm() {
   const [anotherReq, setAnotherReq] = useState(null);
   const [time, setTime] = useState("");
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const [hide, setHide] = useState(0);
+
   const handleSelectChange = (event) => {
     const selectedValues = Array.from(
       event.target.selectedOptions,
@@ -71,7 +76,6 @@ export default function BookingForm() {
     );
     setSelectedOptions(selectedValues);
   };
-  const [hide, setHide] = useState(0);
 
   return (
     <>
@@ -112,11 +116,10 @@ export default function BookingForm() {
               />
             </div>
           </div>
-          {/* <div className="form_body_middle "> */}
           <div className="party form_body_group">
             <p>Loại tiệc: </p>
             {partyTypes.map((type) => (
-              <div className="gap-5">
+              <div className="gap-5" key={type.id}>
                 <input
                   type="checkbox"
                   id={"party" + type.id}
@@ -137,7 +140,7 @@ export default function BookingForm() {
             <p>Địa điểm: </p>
 
             {locationTypes.map((type) => (
-              <div className="gap-5">
+              <div className="gap-5" key={type.id}>
                 <input
                   type="radio"
                   id={"location" + type.id}
@@ -184,7 +187,7 @@ export default function BookingForm() {
                 }}
               >
                 {ages.map((type) => (
-                  <option value={type.id}>{type.name}</option>
+                  <option key={type.id} value={type.id}>{type.name}</option>
                 ))}
               </select>
             </div>
@@ -192,7 +195,7 @@ export default function BookingForm() {
             <div className="gap-5">
               <p>Giới tính: </p>
               {genders.map((type) => (
-                <div className="gap-5">
+                <div className="gap-5" key={type.id}>
                   <input
                     type="radio"
                     id={"gender" + type.id}
@@ -235,6 +238,7 @@ export default function BookingForm() {
               id="requirement"
               cols="30"
               rows="10"
+              spellCheck={false}
               onChange={(e) => {
                 setAnotherReq(e.target.value);
               }}
@@ -254,7 +258,7 @@ export default function BookingForm() {
 
       {/* ============================================================================================ */}
       {hide === 1 ? (
-        <div className="form_result   ">
+        <div className="form_result">
           <div className="header">
             <h1>THÔNG TIN ĐẶT CHỖ</h1>
           </div>
@@ -290,7 +294,7 @@ export default function BookingForm() {
 
             <div className="form_body_group">
               <h3>Các yêu cầu kèm theo:</h3>
-              <p>{anotherReq}</p>
+              <p style={{ whiteSpace : 'pre-line' }}>{anotherReq}</p>
             </div>
 
             <div className="form_body_group ">
