@@ -139,16 +139,20 @@ export default function Form2() {
 				</div>
 			</div>
 
-            {isShowResult &&
-                <div className='result'>
-                    <h2>Thông tin phiếu theo dõi</h2>
-                    <p>Tên học sinh: {fullname} - Lớp: {schoolClass}</p>
-                    <p>Ngày đăng ký: {date.replace('-', '/')} - Giáo viên phụ trách: {teacher}</p>
-                    <p>Những công việc đã được phân công nhưng chưa hoàn thành: </p>
-                    <p>{task}</p>
-                    <p>Cam kết sẽ hoàn thành tại: {options.join(" - ")}</p>
-                </div>
-            }
-        </div>
-    );
+			{isShowResult && (
+				<div className="result">
+					<h2>Thông tin phiếu theo dõi</h2>
+					<p>
+						Tên học sinh: {fullname} - Lớp: {schoolClass}
+					</p>
+					<p>
+						Ngày đăng ký: {date.replace('-', '/')} - Giáo viên phụ trách: {teacher}
+					</p>
+					<p>Những công việc đã được phân công nhưng chưa hoàn thành: </p>
+					<p>{task}</p>
+					<p>Cam kết sẽ hoàn thành tại: {options.join(' - ')}</p>
+				</div>
+			)}
+		</div>
+	);
 }
